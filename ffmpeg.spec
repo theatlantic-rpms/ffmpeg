@@ -84,7 +84,9 @@ BuildRequires:  yasm
 %{!?_without_openal:BuildRequires: openal-soft-devel}
 %if 0%{!?_without_opencl:1}
 BuildRequires:  opencl-headers ocl-icd-devel
+%if 0%{?fedora} >= 24
 Recommends:     opencl-icd
+%endif
 %endif
 %{!?_without_opencv:BuildRequires: opencv-devel}
 BuildRequires:  openjpeg2-devel
